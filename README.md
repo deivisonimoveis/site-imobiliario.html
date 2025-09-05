@@ -43,8 +43,7 @@ Site simples para venda de imóveis, desenvolvido em HTML, CSS e JavaScript puro
 Para dúvidas ou suporte, entre em contato:
 
 - Email: contato@deivisonlemosimoveis.com.br
-- Telefone: (11) 99999-9999
-
+- Telefone: (42) 98836-8121
 ---
 
 © 2024 Deivison Lemos Imóveis - Todos os direitos reservados.
