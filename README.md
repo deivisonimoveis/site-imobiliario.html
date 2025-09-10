@@ -47,3 +47,27 @@ Para dúvidas ou suporte, entre em contato:
 ---
 
 © 2024 Deivison Lemos Imóveis - Todos os direitos reservados.
+        [
+          {
+            "id":1,
+            "title":"Casa no Centro",
+            "description":"3 quartos, 2 banheiros, garagem para 2 carros.",
+            "price":"R$ 350.000",
+            "type":"casa",
+            "trans":"compra",
+            "city":"guarapuava",
+            "image":"https://images.unsplash.com/photo-1560185127-6a1ff0b3a9c1?auto=format&fit=crop&w=800&q=60"
+          },
+          {
+            "id":2,
+            "title":"Apartamento Moderno",
+            "description":"2 quartos, 1 suíte, vista panorâmica.",
+            "price":"R$ 280.000",
+            "type":"apartamento",
+            "trans":"compra",
+            "city":"praia",
+            "image":"https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60"
+          }
+          // Adicione mais imóveis aqui
+        ]
+        
