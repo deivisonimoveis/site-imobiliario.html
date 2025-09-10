@@ -1,268 +1,58 @@
-<!--
-Arquivo: site_imobiliario.html
-O que fazer:
-1) Coloque este arquivo no seu repositório GitHub Pages (pasta root ou branch gh-pages).
-2) Crie a pasta /assets e envie seu logo como assets/logo.png (use o nome exato) e a imagem de fundo como assets/logo-bg.jpg (opcional).
-3) Se quiser atualizar os imóveis sem mexer no HTML, crie properties.json na raiz do site (exemplo já embutido).
-4) Alterar telefone/email: procure as constantes PHONE e EMAIL no script abaixo.
-
-Este arquivo é responsivo, moderno, usa paleta marrom+dourado do seu logo e permite filtros: compra/locação, tipo e cidade.
--->
-
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Deivison Lemos Imóveis</title>
-  <meta name="description" content="Imóveis - Deivison Lemos Imóveis">
-  <style>
-    :root{
-      --marrom:#8B5E3C; /* fundo */
-      --marrom-esc:#5A3825;
-      --dourado:#D4AF37; /* destaque */
-      --branco:#ffffff;
-      --cinza:#f3f3f3;
-      --card-shadow: 0 6px 18px rgba(34,34,34,0.08);
-      --radius:12px;
-      --maxw:1100px;
-    }
-    *{box-sizing:border-box}
-    body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:#222;background:linear-gradient(180deg,var(--cinza) 0%, #fff 100%)}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devison Lemos Imóveis - CRECI 51055 | Guarapuava • Praia | Compra e Locação</title>
+    <meta name="description" content="Corretor Devison Lemos CRECI 51055-PR. Especialista em imóveis em Guarapuava e Praia. Casas, apartamentos e terrenos para compra e locação. Contato direto via WhatsApp (42) 98836-8121.">
+    <meta name="keywords" content="devison lemos, creci 51055, corretor guarapuava, imóveis praia, casa venda guarapuava, apartamento locação, terreno guarapuava, corretor imóveis pr">
 
-    /* header */
-    header{background:var(--marrom);color:var(--branco);padding:20px 12px}
-    .wrap{max-width:var(--maxw);margin:0 auto}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:56px;width:56px;object-fit:contain;border-radius:8px;background:var(--branco)}
-    .brand h1{font-size:20px;margin:0}
-    nav a{color:var(--branco);text-decoration:none;margin-left:18px;font-weight:600}
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devisonlemosimoveis.com.br">
+    <meta property="og:title" content="Devison Lemos Imóveis - CRECI 51055 | Guarapuava • Praia">
+    <meta property="og:description" content="Corretor Devison Lemos CRECI 51055-PR. Especialista em imóveis em Guarapuava e Praia. Casas, apartamentos e terrenos para compra e locação.">
+    <meta property="og:image" content="https://cdn-ai.onspace.ai/onspace/project/image/Z2FGmugqKCXvScw6cvy4Mx/perfil.png.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Devison Lemos Imóveis">
+    <meta property="og:locale" content="pt_BR">
 
-    /* hero */
-    .hero{background:var(--marrom-esc);color:var(--branco);padding:36px 12px;border-bottom:6px solid rgba(0,0,0,0.05)}
-    .hero-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-    .hero-title{flex:1}
-    .hero-title h2{margin:0;font-size:28px}
-    .hero-title p{margin:6px 0 0}
-    .hero-logo{width:140px;height:120px;background-image:url('assets/logo-bg.jpg');background-size:cover;background-position:center;border-radius:10px;box-shadow:var(--card-shadow)}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://devisonlemosimoveis.com.br">
+    <meta name="twitter:title" content="Devison Lemos Imóveis - CRECI 51055 | Guarapuava • Praia">
+    <meta name="twitter:description" content="Corretor Devison Lemos CRECI 51055-PR. Especialista em imóveis em Guarapuava e Praia. Contato: (42) 98836-8121">
+    <meta name="twitter:image" content="https://cdn-ai.onspace.ai/onspace/project/image/Z2FGmugqKCXvScw6cvy4Mx/perfil.png.jpeg">
 
-    /* filtros */
-    .filters{background:var(--cinza);padding:18px;border-radius:10px;margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-    .filters select,.filters input{padding:10px;border-radius:8px;border:1px solid #ddd;min-width:160px}
-    .filters .btn{background:var(--dourado);border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer}
-
-    /* grid imóveis */
-    main{padding:40px 12px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:var(--maxw);margin:0 auto}
-    .card{background:var(--branco);padding:18px;border-radius:var(--radius);box-shadow:var(--card-shadow);display:flex;flex-direction:column;align-items:center;text-align:center}
-    .card img{height:120px;width:100%;object-fit:cover;border-radius:8px;margin-bottom:12px}
-    .card h3{margin:6px 0 4px}
-    .card p{margin:6px 0;color:#666}
-    .price{font-weight:800;color:var(--marrom-esc);margin:8px 0}
-    .wa{background:linear-gradient(180deg,#13b159,#10a64f);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
-
-    /* footer */
-    footer{background:var(--marrom);color:var(--branco);padding:24px 12px;margin-top:30px}
-    footer .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
-
-    /* responsivo */
-    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.brand img{height:48px;width:48px}}
-    @media (max-width:700px){.grid{grid-template-columns:1fr}.hero-inner{flex-direction:column;align-items:flex-start}.hero-logo{width:100%;height:140px}}
-
-    /* destaque dourado para títulos */
-    .gold{color:var(--dourado)}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap topbar">
-      <div class="brand">
-        <img src="assets/logo.png" alt="logo">
-        <div>
-          <h1>Deivison Lemos Imóveis</h1>
-          <div style="font-size:13px;opacity:0.9">Guarapuava • Praia — Compra e Locação</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#inicio">Início</a>
-        <a href="#imoveis">Imóveis</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-title">
-        <h2 class="gold">Seu próximo imóvel começa aqui</h2>
-        <p>Filtro rápido, lista de imóveis na página inicial e contato com um clique no WhatsApp.</p>
-        <div class="filters" style="margin-top:12px">
-          <select id="transType" aria-label="Compra ou Locação">
-            <option value="">Compra ou Locação</option>
-            <option value="compra">Compra</option>
-            <option value="locacao">Locação</option>
-          </select>
-          <select id="tipo" aria-label="Tipo de imóvel">
-            <option value="">Tipo (Casa, Apartamento, Terreno)</option>
-            <option value="casa">Casa</option>
-            <option value="apartamento">Apartamento</option>
-            <option value="terreno">Terreno</option>
-            <option value="mansao">Mansão</option>
-          </select>
-          <select id="cidade" aria-label="Cidade">
-            <option value="">Cidade (Guarapuava ou Praia)</option>
-            <option value="guarapuava">Guarapuava</option>
-            <option value="praia">Praia</option>
-          </select>
-          <input id="search" placeholder="Procurar por nome ou detalhe" />
-          <button class="btn" id="buscar">Buscar</button>
-          <button class="btn" id="limpar">Limpar</button>
-        </div>
-      </div>
-      <div class="hero-logo" title="Logo de fundo"></div>
-    </div>
-  </section>
-
-  <main id="imoveis">
-    <div class="wrap" style="text-align:center;margin-bottom:22px">
-      <h2 style="margin:0;font-size:26px">Imóveis Disponíveis</h2>
-      <p style="color:#666;margin-top:6px">Clique em "Falar no WhatsApp" para entrar em contato direto.</p>
-    </div>
-
-    <div class="grid wrap" id="grid"></div>
-
-    <div style="max-width:var(--maxw);margin:28px auto;text-align:center;color:#666">
-      <small>Para adicionar ou editar imóveis: abra o arquivo <code>properties.json</code> na raiz do site e atualize os dados (ex: título, preço, cidade, tipo, foto).</small>
-    </div>
-  </main>
-
-  <footer id="contato">
-    <div class="foot-inner wrap">
-      <div>
-        <strong>Deivison Lemos Imóveis</strong>
-        <div style="font-size:14px;margin-top:6px">Telefone/WhatsApp: <span id="phone-footer"></span></div>
-        <div style="font-size:13px;margin-top:6px">Email: <span id="email-footer"></span></div>
-      </div>
-      <div>© 2025 Deivison Lemos Imóveis. Todos os direitos reservados.</div>
-    </div>
-  </footer>
-
-  <script>
-    // === CONFIGURE AQUI ===
-    const PHONE = "+55 42 98836-8121"; // formato para WhatsApp
-    const EMAIL = "deivisonlemosimoveis@gmail.com";
-    // =======================
-
-    document.getElementById('phone-footer').innerText = PHONE;
-    document.getElementById('email-footer').innerText = EMAIL;
-
-    // Exemplo de imóveis. Você pode substituir criando um arquivo properties.json na raiz com o mesmo formato.
-    const defaultProperties = [
-      {
-        "id":1,
-        "title":"Casa no Centro",
-        "description":"3 quartos, 2 banheiros, garagem para 2 carros.",
-        "price":"R$ 350.000",
-        "type":"casa",
-        "trans":"compra",
-        "city":"guarapuava",
-        "image":"https://images.unsplash.com/photo-1560185127-6a1ff0b3a9c1?auto=format&fit=crop&w=800&q=60"
-      },
-      {
-        "id":2,
-        "title":"Apartamento Moderno",
-        "description":"2 quartos, 1 suíte, vista panorâmica.",
-        "price":"R$ 280.000",
-        "type":"apartamento",
-        "trans":"compra",
-        "city":"praia",
-        "image":"https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60"
-      },
-      {
-        "id":3,
-        "title":"Mansão de Luxo",
-        "description":"5 suítes, piscina, área gourmet.",
-        "price":"R$ 1.200.000",
-        "type":"mansao",
-        "trans":"compra",
-        "city":"praia",
-        "image":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60"
-      }
-    ];
-
-    // Tenta carregar properties.json (se existir). Se não, usa defaultProperties.
-    async function loadProperties(){
-      try{
-        const resp = await fetch('properties.json', {cache:'no-store'});
-        if(!resp.ok) throw new Error('no json');
-        const data = await resp.json();
-        return data;
-      }catch(e){
-        return defaultProperties;
-      }
-    }
-
-    function createCard(p){
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.innerHTML = `\n        <img src="${p.image}" alt="${escapeHtml(p.title)}">\n        <h3 class="gold">${escapeHtml(p.title)}</h3>\n        <p>${escapeHtml(p.description)}</p>\n        <div class="price">${escapeHtml(p.price)}</div>\n        <a class="wa" href="https://wa.me/${phoneForWa(PHONE)}?text=${encodeURIComponent('Olá Deivison! Tenho interesse no imóvel: '+p.title)}" target="_blank">Falar no WhatsApp</a>\n      `;
-      return div;
-    }
-
-    function phoneForWa(ph){
-      // remove espaços, parênteses, traços
-      return ph.replace(/[^+0-9]/g,'').replace(/^\+/, '');
-    }
-
-    function escapeHtml(s){
-      return String(s).replace(/[&<>\"]/g, function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});
-    }
-
-    function renderGrid(props){
-      const grid = document.getElementById('grid');
-      grid.innerHTML = '';
-      if(!props || props.length===0){
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#666;padding:40px">Nenhum imóvel encontrado.</div>';
-        return;
-      }
-      props.forEach(p=>{
-        grid.appendChild(createCard(p));
-      });
-    }
-
-    // filtros
-    function applyFilters(all){
-      const trans = document.getElementById('transType').value;
-      const tipo  = document.getElementById('tipo').value;
-      const cidade = document.getElementById('cidade').value;
-      const term = document.getElementById('search').value.trim().toLowerCase();
-      const filtered = all.filter(p=>{
-        if(trans && p.trans!==trans) return false;
-        if(tipo && p.type!==tipo) return false;
-        if(cidade && p.city!==cidade) return false;
-        if(term){
-          const t = (p.title+' '+p.description+' '+p.price).toLowerCase();
-          if(!t.includes(term)) return false;
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Devison Lemos",
+      "url": "https://devisonlemosimoveis.com.br",
+      "description": "Corretor de Imóveis CRECI 51055-PR especializado em Guarapuava e Praia",
+      "telephone": "+5542988368121",
+      "email": "deivisonlemosimoveis@gmail.com",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Guarapuava",
+          "addressRegion": "PR"
         }
-        return true;
-      });
-      renderGrid(filtered);
+      ],
+      "serviceType": ["Compra de Imóveis", "Locação de Imóveis", "Consultoria Imobiliária"],
+      "sameAs": [
+        "https://www.instagram.com/corretordeivisonlemos/"
+      ]
     }
+    </script>
 
-    // eventos
-    document.getElementById('buscar').addEventListener('click', async ()=>{ applyFilters(window._ALL_PROPS || []); });
-    document.getElementById('limpar').addEventListener('click', ()=>{ document.getElementById('transType').value='';document.getElementById('tipo').value='';document.getElementById('cidade').value='';document.getElementById('search').value=''; renderGrid(window._ALL_PROPS || []); });
-
-    // pesquisa ao digitar Enter
-    document.getElementById('search').addEventListener('keydown', (e)=>{ if(e.key==='Enter') applyFilters(window._ALL_PROPS || []);});
-
-    // inicia
-    (async ()=>{
-      const props = await loadProperties();
-      window._ALL_PROPS = props;
-      renderGrid(props);
-    })();
-  </script>
-</body>
+    <link rel="icon" type="image/png" href="https://cdn-ai.onspace.ai/onspace/project/image/ZF6RpDGxB5HFbNVCSwT6hb/logo.png.jpeg" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
