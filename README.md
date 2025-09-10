@@ -1,3 +1,19 @@
+/ (raiz do repositório)
+ ├── index.html
+ ├── style.css
+ ├── script.js
+ ├── /img
+ │     ├── logo.png
+ │     ├── casa1.jpg
+ │     └── casa2.jpg
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
