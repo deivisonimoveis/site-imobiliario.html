@@ -1,3 +1,5 @@
+<img src="img/perfil.jpg" alt="Deivison Lemos" style="border-radius:50%; width:150px;">
+<img src="img/logo.png" alt="Deivison Lemos Imóveis" style="height:60px;">
 / (raiz do repositório)
  ├── index.html
  ├── style.css
