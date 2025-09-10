@@ -1,6 +1,7 @@
 <!--
 Arquivo: site_imobiliario.html
-O que fazer:
+O que fazer:![WhatsApp Image 2025-09-09 at 09 28 58](https://github.com/user-attachments/assets/c3c0a3ff-c974-47d0-b52d-4cacafd528ff)
+
 1) Coloque este arquivo no seu repositório GitHub Pages (pasta root ou branch gh-pages).
 2) Crie a pasta /assets e envie seu logo como assets/logo.png (use o nome exato) e a imagem de fundo como assets/logo-bg.jpg (opcional).
 3) Se quiser atualizar os imóveis sem mexer no HTML, crie properties.json na raiz do site (exemplo já embutido).
