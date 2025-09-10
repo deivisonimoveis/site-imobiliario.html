@@ -1,357 +1,143 @@
-<img src="img/perfil.jpg" alt="Deivison Lemos" style="border-radius:50%; width:150px;">
-<img src="img/logo.png" alt="Deivison Lemos Imóveis" style="height:60px;">
-/ (raiz do repositório)
- ├── index.html
- ├── style.css
- ├── script.js
- ├── /img
- │     ├── logo.png
- │     ├── casa1.jpg
- │     └── casa2.jpg
-body {
-  font-family: 'Segoe UI', sans-serif;
-}
 
-.card img {
-  height: 220px;
-  object-fit: cover;
-}
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR">![logo png](https://github.com/user-attachments/assets/3816ecf1-8037-4ba0-9267-37e4350bc20e)
+
+<head>![perfil png](https://github.com/user-attachments/assets/1df3bd26-756e-4e9f-85e2-49a7c405a3e7)
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deivison Lemos Imóveis</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Deivison Lemos Imóveis</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#imoveis">Imóveis</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Banner -->
-  <section class="bg-dark text-light text-center p-5">
-    <h1 class="display-5">Seu próximo imóvel começa aqui</h1>
-    <p class="lead">Guarapuava · Praia · Litoral</p>
-    <a href="#imoveis" class="btn btn-warning btn-lg mt-3">Ver Imóveis</a>
-  </section>
-
-  <!-- Imóveis -->
-  <section id="imoveis" class="container my-5">
-    <h2 class="text-center mb-4">Imóveis Disponíveis</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="img/casa1.jpg" class="card-img-top" alt="Casa no Centro">
-          <div class="card-body">
-            <h5 class="card-title">Casa no Centro</h5>
-            <p class="card-text">Ampla, 3 quartos, garagem para 2 carros. Localização privilegiada.</p>
-            <a href="https://wa.me/5542988368121" class="btn btn-outline-success w-100">Chamar no WhatsApp</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow">
-          <img src="img/casa2.jpg" class="card-img-top" alt="Casa na Praia">
-          <div class="card-body">
-            <h5 class="card-title">Casa na Praia</h5>
-            <p class="card-text">Vista para o mar, ideal para férias ou investimento.</p>
-            <a href="https://wa.me/5542988368121" class="btn btn-outline-success w-100">Chamar no WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <footer id="contato" class="bg-dark text-light text-center p-4">
-    <p class="mb-1">© 2025 Deivison Lemos Imóveis · CRECI-PR 51055</p>
-    <a href="mailto:deivisonlemosimoveis@gmail.com" class="text-warning">deivisonlemosimoveis@gmail.com</a>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html><!--
-Arquivo: site_imobiliario.html
-O que fazer:![WhatsApp Image 2025-09-09 at 09 28 58](https://github.com/user-attachments/assets/c3c0a3ff-c974-47d0-b52d-4cacafd528ff)
-
-1) Coloque este arquivo no seu repositório GitHub Pages (pasta root ou branch gh-pages).
-2) Crie a pasta /assets e envie seu logo como assets/logo.png (use o nome exato) e a imagem de fundo como assets/logo-bg.jpg (opcional).
-3) Se quiser atualizar os imóveis sem mexer no HTML, crie properties.json na raiz do site (exemplo já embutido).
-4) Alterar telefone/email: procure as constantes PHONE e EMAIL no script abaixo.
-
-Este arquivo é responsivo, moderno, usa paleta marrom+dourado do seu logo e permite filtros: compra/locação, tipo e cidade.
--->
-
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Deivison Lemos Imóveis</title>
-  <meta name="description" content="Imóveis - Deivison Lemos Imóveis">
   <style>
-    :root{
-      --marrom:#8B5E3C; /* fundo */
-      --marrom-esc:#5A3825;
-      --dourado:#D4AF37; /* destaque */
-      --branco:#ffffff;
-      --cinza:#f3f3f3;
-      --card-shadow: 0 6px 18px rgba(34,34,34,0.08);
-      --radius:12px;
-      --maxw:1100px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    body{font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;color:#222;background:linear-gradient(180deg,var(--cinza) 0%, #fff 100%)}
 
-    /* header */
-    header{background:var(--marrom);color:var(--branco);padding:20px 12px}
-    .wrap{max-width:var(--maxw);margin:0 auto}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{height:56px;width:56px;object-fit:contain;border-radius:8px;background:var(--branco)}
-    .brand h1{font-size:20px;margin:0}
-    nav a{color:var(--branco);text-decoration:none;margin-left:18px;font-weight:600}
+    header {
+      background: #5c3a1e;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-    /* hero */
-    .hero{background:var(--marrom-esc);color:var(--branco);padding:36px 12px;border-bottom:6px solid rgba(0,0,0,0.05)}
-    .hero-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-    .hero-title{flex:1}
-    .hero-title h2{margin:0;font-size:28px}
-    .hero-title p{margin:6px 0 0}
-    .hero-logo{width:140px;height:120px;background-image:url('assets/logo-bg.jpg');background-size:cover;background-position:center;border-radius:10px;box-shadow:var(--card-shadow)}
+    header img {
+      height: 60px;
+    }
 
-    /* filtros */
-    .filters{background:var(--cinza);padding:18px;border-radius:10px;margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-    .filters select,.filters input{padding:10px;border-radius:8px;border:1px solid #ddd;min-width:160px}
-    .filters .btn{background:var(--dourado);border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
 
-    /* grid imóveis */
-    main{padding:40px 12px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:var(--maxw);margin:0 auto}
-    .card{background:var(--branco);padding:18px;border-radius:var(--radius);box-shadow:var(--card-shadow);display:flex;flex-direction:column;align-items:center;text-align:center}
-    .card img{height:120px;width:100%;object-fit:cover;border-radius:8px;margin-bottom:12px}
-    .card h3{margin:6px 0 4px}
-    .card p{margin:6px 0;color:#666}
-    .price{font-weight:800;color:var(--marrom-esc);margin:8px 0}
-    .wa{background:linear-gradient(180deg,#13b159,#10a64f);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
+    .hero {
+      text-align: center;
+      padding: 30px;
+      background: #fff;
+    }
 
-    /* footer */
-    footer{background:var(--marrom);color:var(--branco);padding:24px 12px;margin-top:30px}
-    footer .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+    .hero img {
+      border-radius: 50%;
+      width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
 
-    /* responsivo */
-    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.brand img{height:48px;width:48px}}
-    @media (max-width:700px){.grid{grid-template-columns:1fr}.hero-inner{flex-direction:column;align-items:flex-start}.hero-logo{width:100%;height:140px}}
+    .hero h1 {
+      margin-top: 20px;
+      color: #5c3a1e;
+    }
 
-    /* destaque dourado para títulos */
-    .gold{color:var(--dourado)}
+    .filter {
+      background: #5c3a1e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .filter select,
+    .filter input {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .filter button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #e0b200;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+    }
+
+    footer a {
+      color: #e0b200;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Cabeçalho -->
   <header>
-    <div class="wrap topbar">
-      <div class="brand">
-        <img src="assets/logo.png" alt="logo">
-        <div>
-          <h1>Deivison Lemos Imóveis</h1>
-          <div style="font-size:13px;opacity:0.9">Guarapuava • Praia — Compra e Locação</div>
-        </div>
-      </div>
-      <nav>
-        <a href="#inicio">Início</a>
-        <a href="#imoveis">Imóveis</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
+    <img src="img/logo.png" alt="Logo Deivison Lemos Imóveis">
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Imóveis</a>
+      <a href="#">Contato</a>
+    </nav>
   </header>
 
+  <!-- Foto + título -->
   <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-title">
-        <h2 class="gold">Seu próximo imóvel começa aqui</h2>
-        <p>Filtro rápido, lista de imóveis na página inicial e contato com um clique no WhatsApp.</p>
-        <div class="filters" style="margin-top:12px">
-          <select id="transType" aria-label="Compra ou Locação">
-            <option value="">Compra ou Locação</option>
-            <option value="compra">Compra</option>
-            <option value="locacao">Locação</option>
-          </select>
-          <select id="tipo" aria-label="Tipo de imóvel">
-            <option value="">Tipo (Casa, Apartamento, Terreno)</option>
-            <option value="casa">Casa</option>
-            <option value="apartamento">Apartamento</option>
-            <option value="terreno">Terreno</option>
-            <option value="mansao">Mansão</option>
-          </select>
-          <select id="cidade" aria-label="Cidade">
-            <option value="">Cidade (Guarapuava ou Praia)</option>
-            <option value="guarapuava">Guarapuava</option>
-            <option value="praia">Praia</option>
-          </select>
-          <input id="search" placeholder="Procurar por nome ou detalhe" />
-          <button class="btn" id="buscar">Buscar</button>
-          <button class="btn" id="limpar">Limpar</button>
-        </div>
-      </div>
-      <div class="hero-logo" title="Logo de fundo"></div>
+    <img src="img/perfil.jpg" alt="Deivison Lemos">
+    <h1>Deivison Lemos Imóveis</h1>
+    <p>Compra e Locação • Guarapuava e Litoral</p>
+  </section>
+
+  <!-- Filtro de imóveis -->
+  <section class="filter">
+    <h2>Seu próximo imóvel começa aqui</h2>
+    <p>Filtro rápido, encontre imóveis e entre em contato direto pelo WhatsApp.</p>
+    <div>
+      <select>
+        <option>Compra</option>
+        <option>Locação</option>
+      </select>
+      <select>
+        <option>Casa</option>
+        <option>Apartamento</option>
+        <option>Terreno</option>
+      </select>
+      <select>
+        <option>Guarapuava</option>
+        <option>Praia</option>
+      </select>
+      <input type="text" placeholder="Procurar por nome ou detalhe">
+      <button>Buscar</button>
     </div>
   </section>
 
-  <main id="imoveis">
-    <div class="wrap" style="text-align:center;margin-bottom:22px">
-      <h2 style="margin:0;font-size:26px">Imóveis Disponíveis</h2>
-      <p style="color:#666;margin-top:6px">Clique em "Falar no WhatsApp" para entrar em contato direto.</p>
-    </div>
-
-    <div class="grid wrap" id="grid"></div>
-
-    <div style="max-width:var(--maxw);margin:28px auto;text-align:center;color:#666">
-      <small>Para adicionar ou editar imóveis: abra o arquivo <code>properties.json</code> na raiz do site e atualize os dados (ex: título, preço, cidade, tipo, foto).</small>
-    </div>
-  </main>
-
-  <footer id="contato">
-    <div class="foot-inner wrap">
-      <div>
-        <strong>Deivison Lemos Imóveis</strong>
-        <div style="font-size:14px;margin-top:6px">Telefone/WhatsApp: <span id="phone-footer"></span></div>
-        <div style="font-size:13px;margin-top:6px">Email: <span id="email-footer"></span></div>
-      </div>
-      <div>© 2025 Deivison Lemos Imóveis. Todos os direitos reservados.</div>
-    </div>
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2025 Deivison Lemos Imóveis</p>
+    <p><a href="https://wa.me/5542988368121" target="_blank">Fale comigo no WhatsApp</a></p>
   </footer>
 
-  <script>
-    // === CONFIGURE AQUI ===
-    const PHONE = "+55 42 98836-8121"; // formato para WhatsApp
-    const EMAIL = "deivisonlemosimoveis@gmail.com";
-    // =======================
-
-    document.getElementById('phone-footer').innerText = PHONE;
-    document.getElementById('email-footer').innerText = EMAIL;
-
-    // Exemplo de imóveis. Você pode substituir criando um arquivo properties.json na raiz com o mesmo formato.
-    const defaultProperties = [
-      {
-        "id":1,
-        "title":"Casa no Centro",
-        "description":"3 quartos, 2 banheiros, garagem para 2 carros.",
-        "price":"R$ 350.000",
-        "type":"casa",
-        "trans":"compra",
-        "city":"guarapuava",
-        "image":"https://images.unsplash.com/photo-1560185127-6a1ff0b3a9c1?auto=format&fit=crop&w=800&q=60"
-      },
-      {
-        "id":2,
-        "title":"Apartamento Moderno",
-        "description":"2 quartos, 1 suíte, vista panorâmica.",
-        "price":"R$ 280.000",
-        "type":"apartamento",
-        "trans":"compra",
-        "city":"praia",
-        "image":"https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60"
-      },
-      {
-        "id":3,
-        "title":"Mansão de Luxo",
-        "description":"5 suítes, piscina, área gourmet.",
-        "price":"R$ 1.200.000",
-        "type":"mansao",
-        "trans":"compra",
-        "city":"praia",
-        "image":"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60"
-      }
-    ];
-
-    // Tenta carregar properties.json (se existir). Se não, usa defaultProperties.
-    async function loadProperties(){
-      try{
-        const resp = await fetch('properties.json', {cache:'no-store'});
-        if(!resp.ok) throw new Error('no json');
-        const data = await resp.json();
-        return data;
-      }catch(e){
-        return defaultProperties;
-      }
-    }
-
-    function createCard(p){
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.innerHTML = `\n        <img src="${p.image}" alt="${escapeHtml(p.title)}">\n        <h3 class="gold">${escapeHtml(p.title)}</h3>\n        <p>${escapeHtml(p.description)}</p>\n        <div class="price">${escapeHtml(p.price)}</div>\n        <a class="wa" href="https://wa.me/${phoneForWa(PHONE)}?text=${encodeURIComponent('Olá Deivison! Tenho interesse no imóvel: '+p.title)}" target="_blank">Falar no WhatsApp</a>\n      `;
-      return div;
-    }
-
-    function phoneForWa(ph){
-      // remove espaços, parênteses, traços
-      return ph.replace(/[^+0-9]/g,'').replace(/^\+/, '');
-    }
-
-    function escapeHtml(s){
-      return String(s).replace(/[&<>\"]/g, function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});
-    }
-
-    function renderGrid(props){
-      const grid = document.getElementById('grid');
-      grid.innerHTML = '';
-      if(!props || props.length===0){
-        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:#666;padding:40px">Nenhum imóvel encontrado.</div>';
-        return;
-      }
-      props.forEach(p=>{
-        grid.appendChild(createCard(p));
-      });
-    }
-
-    // filtros
-    function applyFilters(all){
-      const trans = document.getElementById('transType').value;
-      const tipo  = document.getElementById('tipo').value;
-      const cidade = document.getElementById('cidade').value;
-      const term = document.getElementById('search').value.trim().toLowerCase();
-      const filtered = all.filter(p=>{
-        if(trans && p.trans!==trans) return false;
-        if(tipo && p.type!==tipo) return false;
-        if(cidade && p.city!==cidade) return false;
-        if(term){
-          const t = (p.title+' '+p.description+' '+p.price).toLowerCase();
-          if(!t.includes(term)) return false;
-        }
-        return true;
-      });
-      renderGrid(filtered);
-    }
-
-    // eventos
-    document.getElementById('buscar').addEventListener('click', async ()=>{ applyFilters(window._ALL_PROPS || []); });
-    document.getElementById('limpar').addEventListener('click', ()=>{ document.getElementById('transType').value='';document.getElementById('tipo').value='';document.getElementById('cidade').value='';document.getElementById('search').value=''; renderGrid(window._ALL_PROPS || []); });
-
-    // pesquisa ao digitar Enter
-    document.getElementById('search').addEventListener('keydown', (e)=>{ if(e.key==='Enter') applyFilters(window._ALL_PROPS || []);});
-
-    // inicia
-    (async ()=>{
-      const props = await loadProperties();
-      window._ALL_PROPS = props;
-      renderGrid(props);
-    })();
-  </script>
 </body>
 </html>
 
